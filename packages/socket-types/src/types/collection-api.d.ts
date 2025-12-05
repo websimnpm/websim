@@ -12,7 +12,7 @@ export interface CollectionAPI<T extends string> {
     }
   >[];
   create: <TData extends KeyValue>(
-    data: TData
+    data: TData,
   ) => Promise<
     Expand<
       TData & {
@@ -25,7 +25,7 @@ export interface CollectionAPI<T extends string> {
   >;
   update: <T_Id extends string, TData extends KeyValue>(
     id: T_Id,
-    data: TData
+    data: TData,
   ) => Promise<
     Expand<
       TData & {
@@ -38,9 +38,9 @@ export interface CollectionAPI<T extends string> {
   >;
   upsert: <
     TData extends KeyValue & { id?: T_Id },
-    T_Id extends string = string
+    T_Id extends string = string,
   >(
-    data: TData
+    data: TData,
   ) => Promise<
     Expand<
       (TData extends { id: T_Id } ? TData & KeyValue : TData) & {
@@ -63,8 +63,8 @@ export interface CollectionAPI<T extends string> {
           user_id: string;
           username: string;
         }
-      >[]
-    ) => void
+      >[],
+    ) => void,
   ) => () => void;
   filter: (filters: KeyValue) => CollectionAPI<T>;
 }

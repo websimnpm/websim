@@ -34,7 +34,7 @@ export interface WebsimClientAPI {
 
   addEventListener(
     eventType: "comment:created",
-    callback: (data: any) => void
+    callback: (data: any) => void,
   ): () => void;
 
   upload: (file: File) => Promise<string>;

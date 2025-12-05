@@ -4,7 +4,6 @@ import type {
   FeedTrendingData,
   FeedPostsData,
   FeedSearchData,
-
   // ---
   ProjectsAssetsData,
   ProjectsCommentData,
@@ -14,7 +13,6 @@ import type {
   ProjectsRevisionsData,
   ProjectData,
   ProjectsData,
-
   // ---
   FollowersData,
   FollowingData,
@@ -59,7 +57,7 @@ const feed = {
       limit?: number;
       offset?: number;
       range?: "day" | "month" | "week" | "all";
-    }
+    },
   ) => {
     const path = `/feed/search/${sort}/${encodeURIComponent(search)}`;
     return get<FeedSearchData>({ path, params });
@@ -192,7 +190,7 @@ const projects = {
 const user = (
   user:
     | { username: string; userId?: undefined }
-    | { userId: string; username?: undefined }
+    | { userId: string; username?: undefined },
 ) => {
   const userId = user.username ?? user.userId;
 

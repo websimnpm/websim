@@ -6,4 +6,4 @@ export type FollowingData = {
     data: FollowData[];
     meta: Meta;
   };
-}
+};

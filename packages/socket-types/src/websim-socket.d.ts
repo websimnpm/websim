@@ -76,7 +76,7 @@ export class WebsimSocket {
    * @returns Function to unsubscribe.
    */
   subscribePresenceUpdateRequests<TUpdateRequest extends KeyValue>(
-    callback: (updateRequest: TUpdateRequest, fromClientId: string) => void
+    callback: (updateRequest: TUpdateRequest, fromClientId: string) => void,
   ): () => void;
 
   /**
@@ -91,7 +91,7 @@ export class WebsimSocket {
    * @returns Function to unsubscribe.
    */
   subscribeRoomState<TRoomState extends KeyValue>(
-    callback: (state: TRoomState) => void
+    callback: (state: TRoomState) => void,
   ): () => void;
 
   /**
@@ -129,6 +129,6 @@ export class WebsimSocket {
    * @returns Function to unsubscribe.
    */
   subscribePresence<TPresence extends KeyValue>(
-    callback: (presence: { [clientId: string]: TPresence }) => void
+    callback: (presence: { [clientId: string]: TPresence }) => void,
   ): () => void;
 }

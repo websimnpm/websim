@@ -29,7 +29,7 @@ export interface WebsimSocketParty {
         avatarUrl: string;
         username: string;
       };
-    }) => void
+    }) => void,
   ) => () => void;
 
   /**
@@ -50,7 +50,7 @@ export interface WebsimSocketParty {
    * @returns Function to unsubscribe.
    */
   subscribePresence<TPresence extends KeyValue>(
-    callback: (presence: { [clientId: string]: TPresence }) => void
+    callback: (presence: { [clientId: string]: TPresence }) => void,
   ): () => void;
 
   /**
