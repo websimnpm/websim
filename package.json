@@ -1,5 +1,4 @@
 {
-  "name": "@websim/monorepo",
   "private": true,
   "workspaces": {
     "packages": [
