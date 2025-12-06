@@ -2,7 +2,7 @@ import type { KeyValue } from "./types/utils";
 
 import type { WebsimSocketParty } from "./websim-socket-party";
 
-import type { CollectionAPI, QueryAPI } from "./types";
+import type { CollectionAPI, Peers, QueryAPI } from "./types";
 
 export class WebsimSocket {
   constructor();
@@ -33,7 +33,10 @@ export class WebsimSocket {
   close(_code?: number, _reason?: string): void;
   send<TData extends string | object>(data: TData): void;
 
-  query(queryString: string, params?: any[]): QueryAPI;
+  query<TParams extends unknown = unknown>(
+    queryString: string,
+    params?: TParams[],
+  ): QueryAPI;
 
   collection<T extends string>($type: T): CollectionAPI<T>;
 
@@ -48,14 +51,7 @@ export class WebsimSocket {
    * Legacy event handler for changes in connected peers.
    * @param peers An object with client IDs as keys, each containing the client's avatar URL and username.
    */
-  onPeersChanged:
-    | ((peers: {
-        [clientId: string]: {
-          avatarUrl: string;
-          username: string;
-        };
-      }) => any)
-    | null;
+  onPeersChanged: ((peers: Peers) => any) | null;
 
   /**
    * Initialize the WebSocket connection.
@@ -110,12 +106,7 @@ export class WebsimSocket {
    * Object containing all connected peers, including this client.
    * This is always up-to-date.
    */
-  readonly peers: {
-    [clientId: string]: {
-      avatarUrl: string;
-      username: string;
-    };
-  };
+  readonly peers: Peers;
 
   /**
    * Updates the current client's presence state.
