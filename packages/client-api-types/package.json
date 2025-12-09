@@ -2,17 +2,9 @@
   "name": "@websimai/client-api-types",
   "version": "0.0.2",
   "description": "Type declarations for the `window.websim` object",
+  "type": "module",
   "author": "GameRoMan",
   "license": "MIT",
-  "types": "./src/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./src/index.d.ts"
-    }
-  },
-  "scripts": {
-    "npm:publish": "bun publish --access public"
-  },
   "keywords": [
     "websim",
     "client",
@@ -20,6 +12,17 @@
     "types",
     "typescript"
   ],
+  "scripts": {
+    "build": "bunx --bun tsdown",
+    "npm:publish": "bun publish --access public"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
   "devDependencies": {
     "tsdown": "catalog:"
   }

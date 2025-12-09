@@ -2,22 +2,30 @@
   "name": "@websimai/socket-types",
   "version": "0.0.2",
   "description": "Type declarations for the `WebsimSocket` class",
+  "type": "module",
   "author": "GameRoMan",
   "license": "MIT",
-  "types": "./src/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./src/index.d.ts"
-    }
-  },
-  "scripts": {
-    "npm:publish": "bun publish --access public"
-  },
   "keywords": [
     "websim",
     "types",
     "typescript"
   ],
+  "scripts": {
+    "build": "bunx --bun tsdown",
+    "npm:publish": "bun publish --access public"
+  },
+  "files": [
+    "dist/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
   "devDependencies": {
     "tsdown": "catalog:"
   }

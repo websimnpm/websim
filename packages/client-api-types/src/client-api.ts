@@ -52,8 +52,8 @@ export interface WebsimClientAPI {
 
   textToSpeech: (args: TextToSpeechOptions) => Promise<TextToSpeechResult>;
 
-  experimental: {
-    v0: {
+  readonly experimental: {
+    readonly v0: {
       login: () => Promise<void>;
 
       /**
@@ -73,5 +73,5 @@ export interface WebsimClientAPI {
     };
   };
 
-  internal_only_experimental: Record<never, never>;
+  readonly internal_only_experimental: Record<never, never>;
 }
