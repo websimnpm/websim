@@ -9,5 +9,5 @@ declare global {
 
   const WebsimSocket: WebsimSocketConstructor;
 
-  type WebsimSocket = WebsimSocketClass;
+  type WebsimSocket = InstanceType<WebsimSocketConstructor>;
 }
