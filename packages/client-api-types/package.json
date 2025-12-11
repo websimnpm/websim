@@ -5,6 +5,11 @@
   "type": "module",
   "author": "GameRoMan",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/websimnpm/websim.git",
+    "directory": "packages/client-api-types"
+  },
   "keywords": [
     "websim",
     "client",
