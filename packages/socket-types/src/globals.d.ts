@@ -1,4 +1,4 @@
-import { WebsimSocket as WebsimSocketClass } from "./websim-socket";
+import type { WebsimSocketClass } from "./websim-socket";
 
 type WebsimSocketConstructor = typeof WebsimSocketClass;
 
@@ -8,6 +8,6 @@ declare global {
   }
 
   const WebsimSocket: WebsimSocketConstructor;
-
-  type WebsimSocket = InstanceType<WebsimSocketConstructor>;
 }
+
+export {};

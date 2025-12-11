@@ -13,7 +13,7 @@ export type UsersStatsData = {
 };
 
 /**
- * https://api.websim.com/api/v1/users/${userId}/stats
+ * `https://api.websim.com/api/v1/users/${userId}/stats`
  */
 export async function getUserStats(userId: string) {
   const path = `/users/${userId}/stats`;

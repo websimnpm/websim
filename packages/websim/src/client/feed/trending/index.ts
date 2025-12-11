@@ -23,14 +23,14 @@ export type FeedTrendingData = WithIncluded<{
 }>;
 
 /**
- * https://api.websim.com/api/v1/feed/trending
+ * `https://api.websim.com/api/v1/feed/trending`
  */
 export async function getFeedTrending(params?: {
   limit?: number;
   offset?: number;
   range?: "day" | "month" | "week" | "all";
   feed?: "hot" | "new" | "top" | "viral" | "recommended";
-}) {
+}): Promise<FeedTrendingData> {
   const path = `/feed/trending`;
   return get<FeedTrendingData>({ path, params });
 }

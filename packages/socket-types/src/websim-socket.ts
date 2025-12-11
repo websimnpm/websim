@@ -1,10 +1,8 @@
+import type { CollectionAPI, Peers, QueryAPI } from "./types";
 import type { KeyValue } from "./types/utils";
-
 import type { WebsimSocketParty } from "./websim-socket-party";
 
-import type { CollectionAPI, Peers, QueryAPI } from "./types";
-
-export class WebsimSocket {
+export declare class WebsimSocketClass {
   constructor();
 
   readonly CONNECTING: 0;

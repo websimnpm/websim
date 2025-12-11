@@ -25,7 +25,7 @@ export type UsersLikesProjectsData = {
 };
 
 /**
- * https://api.websim.com/api/v1/users/${userId}/likes
+ * `https://api.websim.com/api/v1/users/${userId}/likes`
  */
 export async function getUserLikedSites(
   userId: string,

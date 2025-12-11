@@ -13,7 +13,7 @@ export type ProjectsCommentsData = DataWithMeta<
 >;
 
 /**
- * https://api.websim.com/api/v1/projects/${projectId}/comments
+ * `https://api.websim.com/api/v1/projects/${projectId}/comments`
  */
 export async function getProjectComments(
   projectId: string,
@@ -30,7 +30,7 @@ export async function getProjectComments(
 }
 
 /**
- * https://api.websim.com/api/v1/projects/${projectId}/comments/${commentId}
+ * `https://api.websim.com/api/v1/projects/${projectId}/comments/${commentId}`
  */
 export async function getProjectComment(projectId: string, commentId: string) {
   const path = `/projects/${projectId}/comments/${commentId}`;
@@ -38,7 +38,7 @@ export async function getProjectComment(projectId: string, commentId: string) {
 }
 
 /**
- * https://api.websim.com/api/v1/projects/${projectId}/comments/${commentId}/replies
+ * `https://api.websim.com/api/v1/projects/${projectId}/comments/${commentId}/replies`
  */
 export async function getProjectCommentReplies(
   projectId: string,

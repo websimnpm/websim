@@ -23,20 +23,23 @@ export type ProjectsRevisionsData = Expand<
 >;
 
 /**
- * https://api.websim.com/api/v1/projects/${projectId}/revisions
+ * `https://api.websim.com/api/v1/projects/${projectId}/revisions`
  */
 export async function getProjectRevisions(
   projectId: string,
   params?: { first?: number },
-) {
+): Promise<ProjectsRevisionsData> {
   const path = `/projects/${projectId}/revisions`;
   return get<ProjectsRevisionsData>({ path, params });
 }
 
 /**
- * https://api.websim.com/api/v1/projects/${projectId}/revisions/${version}
+ * `https://api.websim.com/api/v1/projects/${projectId}/revisions/${version}`
  */
-export async function getProjectRevision(projectId: string, version: string) {
+export async function getProjectRevision(
+  projectId: string,
+  version: string,
+): Promise<ProjectData> {
   const path = `/projects/${projectId}/revisions/${version}`;
   return get<ProjectData>({ path });
 }
@@ -46,12 +49,12 @@ export type ProjectsAssetsData = {
 };
 
 /**
- * https://api.websim.com/api/v1/projects/${projectId}/revisions/${version}/assets
+ * `https://api.websim.com/api/v1/projects/${projectId}/revisions/${version}/assets`
  */
 export async function getProjectRevisionAssets(
   projectId: string,
   version: string,
-) {
+): Promise<ProjectsAssetsData> {
   const path = `/projects/${projectId}/revisions/${version}/assets`;
   return get<ProjectsAssetsData>({ path });
 }
@@ -61,23 +64,23 @@ export type ProjectsScreenshotsData = {
 };
 
 /**
- * https://api.websim.com/api/v1/projects/${projectId}/revisions/${version}/screenshots
+ * `https://api.websim.com/api/v1/projects/${projectId}/revisions/${version}/screenshots`
  */
 export async function getProjectRevisionScreenshots(
   projectId: string,
   version: string,
-) {
+): Promise<ProjectsScreenshotsData> {
   const path = `/projects/${projectId}/revisions/${version}/screenshots`;
   return get<ProjectsScreenshotsData>({ path });
 }
 
 /**
- * https://api.websim.com/api/v1/projects/${projectId}/revisions/${version}/html
+ * `https://api.websim.com/api/v1/projects/${projectId}/revisions/${version}/html`
  */
 export async function getProjectRevisionHTML(
   projectId: string,
   version: string,
-) {
+): Promise<string> {
   const path = `/projects/${projectId}/revisions/${version}/html`;
   return get<string>({ path });
 }

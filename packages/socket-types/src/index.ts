@@ -1,3 +1,3 @@
 export type * from "./globals";
-export type * from "./types";
-export type { WebsimSocket } from "./websim-socket";
+export type { CollectionAPI, QueryAPI } from "./types";
+export type { WebsimSocketClass } from "./websim-socket";

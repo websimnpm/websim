@@ -20,7 +20,7 @@ export type FeedPostsData = {
 };
 
 /**
- * https://api.websim.com/api/v1/feed/posts
+ * `https://api.websim.com/api/v1/feed/posts`
  */
 export async function getFeedPosts(params?: {
   limit?: number;

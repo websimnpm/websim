@@ -23,7 +23,7 @@ export type FeedSearchData = WithIncluded<{
 }>;
 
 /**
- * https://api.websim.com/api/v1/feed/search/${sort}/${search}
+ * `https://api.websim.com/api/v1/feed/search/${sort}/${search}`
  */
 export async function searchFeed(
   sort: "best" | "newest" | "best_template",
