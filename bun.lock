@@ -11,28 +11,28 @@
     },
     "packages/client-api-types": {
       "name": "@websimai/client-api-types",
-      "version": "0.0.2",
+      "version": "0.0.3",
       "devDependencies": {
         "tsdown": "catalog:",
       },
     },
     "packages/core-api-types": {
       "name": "@websimai/core-api-types",
-      "version": "0.0.1",
+      "version": "0.0.2",
       "devDependencies": {
         "tsdown": "catalog:",
       },
     },
     "packages/socket-types": {
       "name": "@websimai/socket-types",
-      "version": "0.0.2",
+      "version": "0.0.3",
       "devDependencies": {
         "tsdown": "catalog:",
       },
     },
     "packages/websim": {
       "name": "websim",
-      "version": "0.0.6",
+      "version": "0.0.8",
       "dependencies": {
         "@websimai/core-api-types": "workspace:*",
       },
