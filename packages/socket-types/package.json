@@ -1,6 +1,6 @@
 {
   "name": "@websimai/socket-types",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Type declarations for the `WebsimSocket` class",
   "type": "module",
   "author": "GameRoMan",
