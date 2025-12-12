@@ -5,6 +5,9 @@
   "type": "module",
   "author": "GameRoMan",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/websimnpm/websim.git",
@@ -17,7 +20,7 @@
   ],
   "scripts": {
     "build": "bunx --bun tsdown",
-    "npm:publish": "bun publish --access public"
+    "npm:publish": "bun run build && bun publish"
   },
   "files": [
     "dist/**/*",

@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "build": "bunx --bun tsdown",
-    "npm:publish": "bun publish"
+    "npm:publish": "bun run build && bun publish"
   },
   "files": [
     "dist/**/*",
