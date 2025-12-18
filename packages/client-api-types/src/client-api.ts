@@ -48,13 +48,13 @@ export interface WebsimClientAPI {
     };
   };
 
-  imageGen: (args: ImageGenOptions) => Promise<ImageGenResult>;
+  imageGen(args: ImageGenOptions): Promise<ImageGenResult>;
 
-  textToSpeech: (args: TextToSpeechOptions) => Promise<TextToSpeechResult>;
+  textToSpeech(args: TextToSpeechOptions): Promise<TextToSpeechResult>;
 
   readonly experimental: {
     readonly v0: {
-      login: () => Promise<void>;
+      login(): Promise<void>;
 
       /**
        * Saves the given htmlContent to a new websim site.

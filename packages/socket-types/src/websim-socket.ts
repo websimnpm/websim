@@ -36,7 +36,7 @@ export declare class WebsimSocketClass {
     params?: TParams[],
   ): QueryAPI;
 
-  collection<T extends string>($type: T): CollectionAPI<T>;
+  collection<$Type extends string>($type: $Type): CollectionAPI<$Type>;
 
   readonly clientId: string;
 
@@ -69,23 +69,23 @@ export declare class WebsimSocketClass {
    * @param callback Function to call when a presence update is requested.
    * @returns Function to unsubscribe.
    */
-  subscribePresenceUpdateRequests<TUpdateRequest extends KeyValue>(
-    callback: (updateRequest: TUpdateRequest, fromClientId: string) => void,
+  subscribePresenceUpdateRequests<UpdateRequest extends KeyValue>(
+    callback: (updateRequest: UpdateRequest, fromClientId: string) => void,
   ): () => void;
 
   /**
    * Updates the room-wide state. This merges with existing state.
    * @param delta The new state to merge with current room state.
    */
-  updateRoomState<TDelta extends KeyValue>(delta: TDelta): void;
+  updateRoomState<Delta extends KeyValue>(delta: Delta): void;
 
   /**
    * Subscribe to room state updates.
    * @param callback Function to call when room state changes.
    * @returns Function to unsubscribe.
    */
-  subscribeRoomState<TRoomState extends KeyValue>(
-    callback: (state: TRoomState) => void,
+  subscribeRoomState<RoomState extends KeyValue>(
+    callback: (state: RoomState) => void,
   ): () => void;
 
   /**
@@ -110,14 +110,14 @@ export declare class WebsimSocketClass {
    * Updates the current client's presence state.
    * @param presence The new presence state to set.
    */
-  updatePresence<TPresence extends KeyValue>(presence: TPresence): void;
+  updatePresence<Presence extends KeyValue>(presence: Presence): void;
 
   /**
    * Subscribe to presence updates from all peers.
    * @param callback Function to call when presence changes.
    * @returns Function to unsubscribe.
    */
-  subscribePresence<TPresence extends KeyValue>(
-    callback: (presence: { [clientId: string]: TPresence }) => void,
+  subscribePresence<Presence extends KeyValue>(
+    callback: (presence: { [clientId: string]: Presence }) => void,
   ): () => void;
 }

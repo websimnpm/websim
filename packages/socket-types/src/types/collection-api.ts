@@ -1,63 +1,41 @@
 import type { Expand, KeyValue } from "./utils";
 
-export interface CollectionAPI<T extends string> {
-  getList: <TData extends KeyValue>() => Expand<
-    TData & {
-      readonly id: string;
-      readonly $type: T;
-      readonly created_at: string;
-      readonly updated_at: string;
-      readonly user_id: string;
-      readonly username: string;
-    }
+type BaseData<$Type extends string, Id extends string = string> = {
+  readonly id: Id;
+  readonly $type: $Type;
+  readonly created_at: string;
+  readonly username: string;
+};
+
+export interface CollectionAPI<$Type extends string> {
+  getList<Data extends KeyValue>(): Expand<
+    Data &
+      BaseData<$Type> & {
+        readonly updated_at: string;
+        readonly user_id: string;
+      }
   >[];
-  create: <TData extends KeyValue>(
-    data: TData,
-  ) => Promise<
+  create<Data extends KeyValue>(
+    data: Data,
+  ): Promise<Expand<Data & BaseData<$Type>>>;
+  update<Id extends string, Data extends KeyValue>(
+    id: Id,
+    data: Data,
+  ): Promise<Expand<Data & BaseData<$Type, Id>>>;
+  upsert<Data extends KeyValue & { id?: Id }, Id extends string = string>(
+    data: Data,
+  ): Promise<
     Expand<
-      TData & {
-        readonly id: string;
-        readonly $type: T;
-        readonly created_at: string;
-        readonly username: string;
-      }
+      (Data extends { id: Id } ? Data & KeyValue : Data) & BaseData<$Type, Id>
     >
   >;
-  update: <T_Id extends string, TData extends KeyValue>(
-    id: T_Id,
-    data: TData,
-  ) => Promise<
-    Expand<
-      TData & {
-        readonly id: T_Id;
-        readonly $type: T;
-        readonly created_at: string;
-        readonly username: string;
-      }
-    >
-  >;
-  upsert: <
-    TData extends KeyValue & { id?: T_Id },
-    T_Id extends string = string,
-  >(
-    data: TData,
-  ) => Promise<
-    Expand<
-      (TData extends { id: T_Id } ? TData & KeyValue : TData) & {
-        readonly id: T_Id;
-        readonly $type: T;
-        readonly created_at: string;
-        readonly username: string;
-      }
-    >
-  >;
-  delete: (id: string) => Promise<void>;
-  subscribe: (
+  delete(id: string): Promise<void>;
+  subscribe(
     callback: (
       records: Expand<
         KeyValue & {
           id: string;
-          $type: T;
+          $type: $Type;
           created_at: string;
           updated_at: string;
           user_id: string;
@@ -65,6 +43,6 @@ export interface CollectionAPI<T extends string> {
         }
       >[],
     ) => void,
-  ) => () => void;
-  filter: (filters: KeyValue) => CollectionAPI<T>;
+  ): () => void;
+  filter(filters: KeyValue): CollectionAPI<$Type>;
 }

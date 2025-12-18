@@ -1,3 +1,3 @@
-export type * from "./collection-api";
-export type * from "./peers";
-export type * from "./query-api";
+export type { CollectionAPI } from "./collection-api";
+export type { Peers } from "./peers";
+export type { QueryAPI } from "./query-api";

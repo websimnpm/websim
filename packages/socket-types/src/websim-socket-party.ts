@@ -16,7 +16,7 @@ export interface WebsimSocketParty {
    * This is always up-to-date.
    */
   readonly peers: {
-    [id: string]: {
+    readonly [id: string]: {
       readonly avatarUrl: `https://${string}/${string}`;
       readonly username: string;
       readonly id: string;
@@ -24,7 +24,7 @@ export interface WebsimSocketParty {
     };
   };
 
-  subscribe: (callback: (peers: Peers) => void) => () => void;
+  subscribe(callback: (peers: Peers) => void): () => void;
 
   /**
    * Object containing the current presence state of all connected peers, including this client.
