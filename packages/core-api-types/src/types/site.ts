@@ -17,7 +17,7 @@ export type SiteLoreAttachment = {
 };
 
 export type SiteLore = {
-  version: 1;
+  readonly version: 1;
   attachments: SiteLoreAttachment[];
   enableApi?: boolean;
   enableMobilePrompt?: boolean;
@@ -27,10 +27,11 @@ export type SiteLore = {
   enableLLM2?: boolean;
   enableTweaks?: boolean;
   enableComments?: boolean;
+  enableVideo: false;
 };
 
 export type Site = {
-  _type: "site";
+  readonly _type: "site";
   id: string;
   parent_id: string | null;
   created_at: string;

@@ -1,5 +1,5 @@
 export type User = {
-  _type: "user";
+  readonly _type: "user";
   id: string;
   created_at: string;
   username: string;

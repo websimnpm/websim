@@ -1,4 +1,9 @@
-import type { User } from "@websimai/core-api-types";
+import type {
+  Project,
+  ProjectRevision,
+  Site,
+  User,
+} from "@websimai/core-api-types";
 
 declare namespace CommentContent {
   export type Text = {
@@ -10,8 +15,8 @@ declare namespace CommentContent {
   export type User = { readonly type: "user"; readonly username: string };
   export type Link = {
     readonly type: "link";
-    readonly url: `https://${string}/${string}`;
-    readonly children: readonly [CommentContent];
+    readonly url: string;
+    readonly children: readonly [CommentContent.Text | CommentContent.Image];
   };
   export type Image = {
     readonly type: "image";
@@ -48,12 +53,27 @@ export type WebsimComment = {
   readonly reply_to_data: null;
   readonly pinned: boolean;
   readonly pinned_by: User | null;
-  readonly reactions: readonly unknown[];
+  readonly reactions: readonly {
+    readonly emoji: { readonly name: string };
+    readonly user_ids: readonly string[];
+  }[];
   readonly source: "comments";
   readonly type: "text";
-  readonly card_data: {
-    readonly type: "tip_comment";
-    readonly credits_spent: number;
-  } | null;
+  readonly card_data:
+    | { readonly type: "tip_comment"; readonly credits_spent: number }
+    | {
+        readonly type: "project_post";
+        readonly project: Project;
+        readonly project_revision: ProjectRevision;
+        readonly site: Site;
+      }
+    | null;
   readonly project_data: null;
+  readonly post_presentation:
+    | { readonly type: "tweet" }
+    | {
+        readonly type: "video";
+        readonly video_url: `https://${string}/${string}`;
+      }
+    | null;
 };

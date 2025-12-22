@@ -1,7 +1,7 @@
 import type { User } from "./user";
 
 export type Project = {
-  _type: "project";
+  readonly _type: "project";
   id: string;
   created_at: string;
   updated_at: string;
@@ -18,6 +18,7 @@ export type Project = {
   stats: { views: number; likes: number; comments: number };
   auto_set_current: boolean;
   description: string | null;
+  generated_description: string | null;
   comments_mode: "open" | "closed";
   enable_chat: boolean;
   from_template: boolean | null;

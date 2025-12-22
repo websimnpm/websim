@@ -36,6 +36,9 @@
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
+  "dependencies": {
+    "@websimai/shared-types": "workspace:*"
+  },
   "devDependencies": {
     "tsdown": "catalog:"
   }

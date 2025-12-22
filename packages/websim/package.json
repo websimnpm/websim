@@ -32,7 +32,8 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@websimai/core-api-types": "workspace:*"
+    "@websimai/core-api-types": "workspace:*",
+    "@websimai/shared-types": "workspace:*"
   },
   "devDependencies": {
     "tsdown": "catalog:"

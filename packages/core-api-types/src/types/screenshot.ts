@@ -1,5 +1,5 @@
 export type Screenshot = {
-  _type: "screenshot";
+  readonly _type: "screenshot";
   id: string;
   project_id: string;
   project_version: number;

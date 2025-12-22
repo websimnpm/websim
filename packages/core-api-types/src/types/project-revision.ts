@@ -1,7 +1,7 @@
 import type { User } from "./user";
 
 export type ProjectRevision = {
-  _type: "project_revision";
+  readonly _type: "project_revision";
   id: string;
   version: number;
   created_at: string;

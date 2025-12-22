@@ -32,7 +32,7 @@ type ProjectAssetMetaByContentType =
 
 export type ProjectAsset = Expand<
   {
-    _type: "project_asset";
+    readonly _type: "project_asset";
     id: string;
     project_id: string;
     path: string;

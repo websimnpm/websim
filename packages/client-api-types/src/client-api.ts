@@ -1,3 +1,4 @@
+import type { WebsimComment } from "@websimai/shared-types";
 import type {
   Chat,
   ImageGenOptions,
@@ -43,7 +44,10 @@ export interface WebsimClientAPI {
 
   addEventListener(
     eventType: "comment:created",
-    callback: (data: any) => void,
+    callback: (data: {
+      readonly comment: WebsimComment;
+      readonly cursor: string;
+    }) => void,
   ): () => void;
 
   upload(file: File): Promise<string>;
