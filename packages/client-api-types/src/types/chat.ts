@@ -104,3 +104,9 @@ export namespace ChatCompletions {
   export type Options = ChatCompletionOptions;
   export type Result = ChatCompletionResult;
 }
+
+export declare class Chat {
+  readonly completions: {
+    create(args: ChatCompletionOptions): Promise<ChatCompletionResult>;
+  };
+}

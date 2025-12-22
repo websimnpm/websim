@@ -24,7 +24,7 @@ export async function getProjectComments(
     only_tips?: boolean;
     after?: string;
   },
-) {
+): Promise<ProjectsCommentsData> {
   const path = `/projects/${projectId}/comments`;
   return get<ProjectsCommentsData>({ path, params });
 }
@@ -32,7 +32,10 @@ export async function getProjectComments(
 /**
  * `https://api.websim.com/api/v1/projects/${projectId}/comments/${commentId}`
  */
-export async function getProjectComment(projectId: string, commentId: string) {
+export async function getProjectComment(
+  projectId: string,
+  commentId: string,
+): Promise<ProjectsCommentData> {
   const path = `/projects/${projectId}/comments/${commentId}`;
   return get<ProjectsCommentData>({ path });
 }
@@ -47,7 +50,7 @@ export async function getProjectCommentReplies(
     first?: number;
     sort_by?: "best" | "created_at";
   },
-) {
+): Promise<ProjectsCommentsData> {
   const path = `/projects/${projectId}/comments/${commentId}/replies`;
   return get<ProjectsCommentsData>({ path, params });
 }

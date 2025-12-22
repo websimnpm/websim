@@ -1,6 +1,5 @@
 import type {
-  ChatCompletionOptions,
-  ChatCompletionResult,
+  Chat,
   ImageGenOptions,
   ImageGenResult,
   TextToSpeechOptions,
@@ -35,24 +34,27 @@ export interface WebsimClientAPI {
     images?: string[];
   }): Promise<{ readonly error?: "User has not interacted with the page" }>;
 
+  renderVideo(args: {
+    composition: string;
+    inputProps?: Record<string, unknown>;
+    options?: unknown;
+    onProgress?: (progress: unknown) => void;
+  }): Promise<{ url: string; renderId: string }>;
+
   addEventListener(
     eventType: "comment:created",
     callback: (data: any) => void,
   ): () => void;
 
-  upload: (file: File) => Promise<string>;
+  upload(file: File): Promise<string>;
 
-  readonly chat: {
-    readonly completions: {
-      create: (args: ChatCompletionOptions) => Promise<ChatCompletionResult>;
-    };
-  };
+  readonly chat: Chat;
 
   imageGen(args: ImageGenOptions): Promise<ImageGenResult>;
 
   textToSpeech(args: TextToSpeechOptions): Promise<TextToSpeechResult>;
 
-  readonly experimental: {
+  readonly experimental?: {
     readonly v0: {
       login(): Promise<void>;
 
@@ -72,6 +74,4 @@ export interface WebsimClientAPI {
       getHTML(siteId?: string): Promise<string>;
     };
   };
-
-  readonly internal_only_experimental: Record<never, never>;
 }

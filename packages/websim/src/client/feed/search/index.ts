@@ -1,6 +1,5 @@
 import type { Project, ProjectRevision, Site } from "@websimai/core-api-types";
 import { get } from "~/api";
-
 import type { OffsetMeta, WithIncluded } from "~/types/utils";
 
 export type FeedSearchProject = {
@@ -33,7 +32,7 @@ export async function searchFeed(
     offset?: number;
     range?: "day" | "month" | "week" | "all";
   },
-) {
+): Promise<FeedSearchData> {
   const path = `/feed/search/${sort}/${encodeURIComponent(search)}`;
   return get<FeedSearchData>({ path, params });
 }

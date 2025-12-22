@@ -30,7 +30,7 @@ export type UsersLikesProjectsData = {
 export async function getUserLikedSites(
   userId: string,
   params?: { first?: number },
-) {
+): Promise<UsersLikesProjectsData> {
   const path = `/users/${userId}/likes`;
   return get<UsersLikesProjectsData>({ path, params });
 }

@@ -1,5 +1,4 @@
 import { get } from "~/api";
-
 import type { ProjectInfo, WebsimComment } from "~/types";
 
 type FeedPostsDataComment = WebsimComment & {

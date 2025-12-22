@@ -41,7 +41,9 @@ export type ProjectsStatsData = {
 /**
  * `https://api.websim.com/api/v1/projects/${projectId}/stats`
  */
-export async function getProjectStats(projectId: string) {
+export async function getProjectStats(
+  projectId: string,
+): Promise<ProjectsStatsData> {
   const path = `/projects/${projectId}/stats`;
   return get<ProjectsStatsData>({ path });
 }
