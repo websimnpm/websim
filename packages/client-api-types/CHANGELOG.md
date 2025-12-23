@@ -1,5 +1,13 @@
 # @websimai/client-api-types
 
+## 0.0.6
+
+### Patch Changes
+
+- Dear Bun, please fix your monorepos
+- Updated dependencies
+  - @websimai/shared-types@0.0.4
+
 ## 0.0.5
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@websimai/core-api-types",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Core Websim API type declarations",
   "type": "module",
   "author": "GameRoMan",
