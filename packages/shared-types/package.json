@@ -1,7 +1,7 @@
 {
   "name": "@websimai/shared-types",
   "version": "0.0.2",
-  "description": "A TypeScript wrapper for the Websim.com API",
+  "description": "Shared types",
   "type": "module",
   "author": "GameRoMan",
   "license": "MIT",
