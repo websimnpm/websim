@@ -1,10 +1,13 @@
 {
   "name": "websim",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A TypeScript wrapper for the Websim.com API",
   "type": "module",
   "author": "GameRoMan",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/websimnpm/websim.git",
