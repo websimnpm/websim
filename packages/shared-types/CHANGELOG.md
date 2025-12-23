@@ -1,5 +1,13 @@
 # @websimai/shared-types
 
+## 0.0.3
+
+### Patch Changes
+
+- fix publish
+- Updated dependencies
+  - @websimai/core-api-types@0.0.4
+
 ## 0.0.2
 
 ### Patch Changes

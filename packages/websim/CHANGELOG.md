@@ -1,5 +1,14 @@
 # websim
 
+## 0.0.10
+
+### Patch Changes
+
+- fix publish
+- Updated dependencies
+  - @websimai/core-api-types@0.0.4
+  - @websimai/shared-types@0.0.3
+
 ## 0.0.9
 
 ### Patch Changes

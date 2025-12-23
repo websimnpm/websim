@@ -1,5 +1,11 @@
 # @websimai/core-api-types
 
+## 0.0.4
+
+### Patch Changes
+
+- fix publish
+
 ## 0.0.3
 
 ### Patch Changes

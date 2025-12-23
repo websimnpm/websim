@@ -1,5 +1,11 @@
 # @websimai/socket-types
 
+## 0.0.5
+
+### Patch Changes
+
+- fix publish
+
 ## 0.0.4
 
 ### Patch Changes
