@@ -12,9 +12,9 @@
     "lint": "bunx biome lint",
     "format": "bunx biome check --write --linter-enabled=false",
     "test": "bun test",
-    "build": "bun run --filter='./packages/**' build",
+    "build": "bun run --filter='./packages/**' --elide-lines 0 build",
     "bump": "bunx changeset && bunx changeset version && bun update --lockfile-only'",
-    "release": "bun run --filter='./packages/**' npm:publish"
+    "release": "bun run --filter='./packages/**' --elide-lines 0 npm:publish"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.10",
