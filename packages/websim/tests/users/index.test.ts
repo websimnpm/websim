@@ -1,6 +1,6 @@
 import { describe, expect, it } from "bun:test";
 
-import { getUser } from "~/.";
+import { getUser } from "~/client/users";
 
 describe("getUser", () => {
   it("should work with username", async () => {
