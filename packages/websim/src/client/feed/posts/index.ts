@@ -25,7 +25,7 @@ export async function getFeedPosts(params?: {
   limit?: number;
   offset?: number;
   sort?: "for_you" | "following" | "latest";
-}) {
+}): Promise<FeedPostsData> {
   const path = `/feed/posts`;
   return get<FeedPostsData>({ path, params });
 }
