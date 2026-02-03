@@ -1,4 +1,4 @@
-import type { Project, ProjectRevision, Site } from "@websimai/core-api-types";
+import type { Project, ProjectRevision, Site } from "@websimai/shared-types";
 import { get } from "~/api";
 import type { OffsetMeta, WithIncluded } from "~/types/utils";
 

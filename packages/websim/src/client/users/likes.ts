@@ -3,7 +3,7 @@ import type {
   ProjectRevision,
   Site,
   User,
-} from "@websimai/core-api-types";
+} from "@websimai/shared-types";
 import { get } from "~/api";
 import type { CursorMeta } from "~/types/utils";
 

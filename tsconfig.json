@@ -8,8 +8,6 @@
     "moduleResolution": "bundler",
     "moduleDetection": "force",
 
-    "rootDir": "./src",
-
     "skipLibCheck": true,
 
     // Max strictness
@@ -24,6 +22,5 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true
-  },
-  "include": ["src/**/*"]
+  }
 }

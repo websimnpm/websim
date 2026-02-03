@@ -4,10 +4,10 @@ import type {
   ProjectRevision,
   Screenshot,
   Site,
-} from "@websimai/core-api-types";
+} from "@websimai/shared-types";
 import { get } from "~/api";
 import type { ProjectData } from "~/types";
-import type { DataWithMeta, Expand } from "~/types/utils";
+import type { DataWithMeta, Prettify } from "~/types/utils";
 
 export type ProjectsRevisionData = {
   readonly cursor: string;
@@ -15,7 +15,7 @@ export type ProjectsRevisionData = {
   readonly site: Site;
 };
 
-export type ProjectsRevisionsData = Expand<
+export type ProjectsRevisionsData = Prettify<
   DataWithMeta<"revisions", ProjectsRevisionData[]> & {
     readonly project: Project;
     readonly token: null;

@@ -3,7 +3,7 @@
   "version": "0.0.11",
   "description": "A TypeScript wrapper for the Websim.com API",
   "type": "module",
-  "author": "GameRoMan",
+  "author": "gameroman",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -24,18 +24,14 @@
   },
   "files": [
     "dist/**/*",
-    "README.md",
-    "LICENSE"
+    "README.md"
   ],
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@websimai/core-api-types": "workspace:*",
     "@websimai/shared-types": "workspace:*"
   },
   "devDependencies": {

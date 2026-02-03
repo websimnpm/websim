@@ -1,6 +1,6 @@
-export type Expand<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
+export type Prettify<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
 
-export type WithIncluded<T> = Expand<T & { readonly included: readonly [] }>;
+export type WithIncluded<T> = Prettify<T & { readonly included: readonly [] }>;
 
 export interface CursorMeta {
   readonly count?: number | null;

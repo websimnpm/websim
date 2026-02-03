@@ -1,9 +1,7 @@
-import type {
-  Project,
-  ProjectRevision,
-  Site,
-  User,
-} from "@websimai/core-api-types";
+import type { Project } from "./project";
+import type { ProjectRevision } from "./project-revision";
+import type { Site } from "./site";
+import type { User } from "./user";
 
 declare namespace CommentContent {
   export type Text = {

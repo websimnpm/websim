@@ -1,6 +1,6 @@
-import type { Expand } from "../utils";
-
 import type { User } from "./user";
+
+type Prettify<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
 
 namespace ProjectAssetMeta {
   export type text = {
@@ -30,7 +30,7 @@ type ProjectAssetMetaByContentType =
   | ProjectAssetMeta.image
   | ProjectAssetMeta.audio;
 
-export type ProjectAsset = Expand<
+export type ProjectAsset = Prettify<
   {
     readonly _type: "project_asset";
     id: string;

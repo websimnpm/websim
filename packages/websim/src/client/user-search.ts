@@ -1,4 +1,4 @@
-import type { User } from "@websimai/core-api-types";
+import type { User } from "@websimai/shared-types";
 import { get } from "~/api";
 
 export type UserSearchData = {

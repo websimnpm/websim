@@ -1,4 +1,4 @@
-import type { Project, ProjectRevision, Site } from "@websimai/core-api-types";
+import type { Project, ProjectRevision, Site } from "@websimai/shared-types";
 import type { DataWithMeta, WithIncluded } from "./utils";
 
 export type ProjectInfo = {
