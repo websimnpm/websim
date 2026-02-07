@@ -22,5 +22,6 @@
     "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "verbatimModuleSyntax": true
-  }
+  },
+  "include": ["**/src/*.ts"]
 }

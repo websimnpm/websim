@@ -6,7 +6,7 @@ import type {
   Site,
 } from "@websimai/shared-types";
 import { get } from "~/api";
-import type { ProjectData } from "~/types";
+import type { ProjectData } from "~/types/projects";
 import type { DataWithMeta, Prettify } from "~/types/utils";
 
 export type ProjectsRevisionData = {

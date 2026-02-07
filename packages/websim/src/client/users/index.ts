@@ -1,6 +1,6 @@
 import type { User } from "@websimai/shared-types";
 import { get } from "~/api";
-import type { ProjectData, ProjectsData } from "~/types";
+import type { ProjectData, ProjectsData } from "~/types/projects";
 import type { DataWithMeta } from "~/types/utils";
 
 export * from "./likes";

@@ -5,7 +5,7 @@
       "packages/*"
     ],
     "catalog": {
-      "tsdown": "^0.20.1"
+      "tsdown": "^0.20.3"
     }
   },
   "scripts": {

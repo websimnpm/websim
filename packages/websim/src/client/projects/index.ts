@@ -1,5 +1,5 @@
 import { get } from "~/api";
-import type { ProjectData, ProjectsData } from "~/types";
+import type { ProjectData, ProjectsData } from "~/types/projects";
 
 export * from "./comments";
 export * from "./revisions";
