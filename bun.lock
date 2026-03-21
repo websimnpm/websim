@@ -12,7 +12,7 @@
     },
     "packages/client-api-types": {
       "name": "@websimai/client-api-types",
-      "version": "0.0.7",
+      "version": "0.1.0",
       "dependencies": {
         "@websimai/shared-types": "workspace:*",
       },
@@ -22,21 +22,21 @@
     },
     "packages/shared-types": {
       "name": "@websimai/shared-types",
-      "version": "0.0.5",
+      "version": "0.1.0",
       "devDependencies": {
         "tsdown": "catalog:",
       },
     },
     "packages/socket-types": {
       "name": "@websimai/socket-types",
-      "version": "0.0.7",
+      "version": "0.1.0",
       "devDependencies": {
         "tsdown": "catalog:",
       },
     },
     "packages/websim": {
       "name": "websim",
-      "version": "0.0.13",
+      "version": "0.1.0",
       "dependencies": {
         "@websimai/shared-types": "workspace:*",
       },
