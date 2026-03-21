@@ -38,6 +38,24 @@ export type CommentContent =
   | CommentContent.Link
   | CommentContent.Image;
 
+type WebsimCommentCardData =
+  | { readonly type: "tip_comment"; readonly credits_spent: number }
+  | {
+      readonly type: "project_post";
+      readonly project: Project;
+      readonly project_revision: ProjectRevision;
+      readonly site: Site;
+    }
+  | null;
+
+type WebsimCommentPostPresentation =
+  | { readonly type: "tweet" }
+  | {
+      readonly type: "video";
+      readonly video_url: `https://${string}/${string}`;
+    }
+  | null;
+
 export type WebsimComment = {
   readonly id: string;
   readonly project_id: string;
@@ -57,21 +75,7 @@ export type WebsimComment = {
   }[];
   readonly source: "comments";
   readonly type: "text";
-  readonly card_data:
-    | { readonly type: "tip_comment"; readonly credits_spent: number }
-    | {
-        readonly type: "project_post";
-        readonly project: Project;
-        readonly project_revision: ProjectRevision;
-        readonly site: Site;
-      }
-    | null;
+  readonly card_data: WebsimCommentCardData;
   readonly project_data: null;
-  readonly post_presentation:
-    | { readonly type: "tweet" }
-    | {
-        readonly type: "video";
-        readonly video_url: `https://${string}/${string}`;
-      }
-    | null;
+  readonly post_presentation: WebsimCommentPostPresentation;
 };

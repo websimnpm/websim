@@ -1,13 +1,15 @@
 import type {
+  Prettify,
   Project,
   ProjectAsset,
   ProjectRevision,
   Screenshot,
   Site,
 } from "@websimai/shared-types";
-import { get } from "~/api";
-import type { ProjectData } from "~/types/projects";
-import type { DataWithMeta, Prettify } from "~/types/utils";
+
+import { get } from "#api";
+import type { ProjectData } from "#types/projects";
+import type { DataWithMeta } from "#types/utils";
 
 export type ProjectsRevisionData = {
   readonly cursor: string;

@@ -1,4 +1,6 @@
-import type { Expand, KeyValue } from "./utils";
+import type { KeyValue } from "./utils";
+
+export type Prettify<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
 
 type BaseData<$Type extends string, Id extends string = string> = {
   readonly id: Id;
@@ -8,7 +10,7 @@ type BaseData<$Type extends string, Id extends string = string> = {
 };
 
 export interface CollectionAPI<$Type extends string> {
-  getList<Data extends KeyValue>(): Expand<
+  getList<Data extends KeyValue>(): Prettify<
     Data &
       BaseData<$Type> & {
         readonly updated_at: string;
@@ -17,22 +19,22 @@ export interface CollectionAPI<$Type extends string> {
   >[];
   create<Data extends KeyValue>(
     data: Data,
-  ): Promise<Expand<Data & BaseData<$Type>>>;
+  ): Promise<Prettify<Data & BaseData<$Type>>>;
   update<Id extends string, Data extends KeyValue>(
     id: Id,
     data: Data,
-  ): Promise<Expand<Data & BaseData<$Type, Id>>>;
+  ): Promise<Prettify<Data & BaseData<$Type, Id>>>;
   upsert<Data extends KeyValue & { id?: Id }, Id extends string = string>(
     data: Data,
   ): Promise<
-    Expand<
+    Prettify<
       (Data extends { id: Id } ? Data & KeyValue : Data) & BaseData<$Type, Id>
     >
   >;
   delete(id: string): Promise<void>;
   subscribe(
     callback: (
-      records: Expand<
+      records: Prettify<
         KeyValue & {
           id: string;
           $type: $Type;

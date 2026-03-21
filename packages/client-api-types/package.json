@@ -2,36 +2,32 @@
   "name": "@websimai/client-api-types",
   "version": "0.0.7",
   "description": "Type declarations for the `window.websim` object",
-  "type": "module",
-  "author": "gameroman",
+  "keywords": [
+    "api",
+    "client",
+    "types",
+    "typescript",
+    "websim"
+  ],
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "gameroman",
   "repository": {
     "type": "git",
     "url": "https://github.com/websimnpm/websim.git",
     "directory": "packages/client-api-types"
   },
-  "keywords": [
-    "websim",
-    "client",
-    "api",
-    "types",
-    "typescript"
-  ],
-  "scripts": {
-    "build": "bunx --bun tsdown",
-    "prepublishOnly": "bun run build"
-  },
   "files": [
-    "dist/**/*",
-    "README.md"
+    "dist"
   ],
+  "type": "module",
   "types": "./dist/index.d.mts",
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "bunx --bun tsdown",
+    "prepublishOnly": "bun run build"
   },
   "dependencies": {
     "@websimai/shared-types": "workspace:*"

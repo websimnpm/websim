@@ -1,35 +1,37 @@
 {
   "name": "websim",
   "version": "0.0.13",
-  "description": "A TypeScript wrapper for the Websim.com API",
-  "type": "module",
-  "author": "gameroman",
+  "description": "A TypeScript wrapper for the websim.com API",
+  "keywords": [
+    "api",
+    "typescript",
+    "websim"
+  ],
   "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "gameroman",
   "repository": {
     "type": "git",
-    "url": "https://github.com/websimnpm/websim.git",
+    "url": "git+https://github.com/websimnpm/websim.git",
     "directory": "packages/websim"
   },
-  "keywords": [
-    "websim",
-    "api",
-    "typescript"
-  ],
-  "scripts": {
-    "build": "bunx --bun tsdown",
-    "prepublishOnly": "bun run build"
-  },
   "files": [
-    "dist/**/*",
-    "README.md"
+    "dist"
   ],
+  "type": "module",
   "types": "./dist/index.d.mts",
+  "imports": {
+    "#api": "./src/api/index.ts",
+    "#types/utils": "./src/types/utils.ts",
+    "#types/projects": "./src/types/projects.ts",
+    "#client/*": "./src/client/*/index.ts"
+  },
   "exports": {
     ".": "./dist/index.mjs",
     "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "bunx --bun tsdown",
+    "prepublishOnly": "bun run build"
   },
   "dependencies": {
     "@websimai/shared-types": "workspace:*"

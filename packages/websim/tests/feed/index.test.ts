@@ -1,6 +1,6 @@
 import { describe, expect, it } from "bun:test";
 
-import { getFeedPosts, getFeedTrending, searchFeed } from "~/client/feed";
+import { getFeedPosts, getFeedTrending, searchFeed } from "#client/feed";
 
 describe("getFeedPosts", () => {
   it("should work with default params", async () => {

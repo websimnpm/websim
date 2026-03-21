@@ -10,3 +10,4 @@ export type {
   WebsimPromptType,
 } from "./site";
 export type { User } from "./user";
+export type { Prettify } from "./shared";

@@ -1,5 +1,6 @@
 import type { User } from "@websimai/shared-types";
-import { get } from "~/api";
+
+import { get } from "#api";
 
 export type UserSearchData = {
   readonly data: readonly User[];

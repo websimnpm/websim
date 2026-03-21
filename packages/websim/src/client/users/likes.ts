@@ -4,8 +4,9 @@ import type {
   Site,
   User,
 } from "@websimai/shared-types";
-import { get } from "~/api";
-import type { CursorMeta } from "~/types/utils";
+
+import { get } from "#api";
+import type { CursorMeta } from "#types/utils";
 
 export type ProjectLikedInfo = {
   readonly project: Project;

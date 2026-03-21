@@ -1,6 +1,7 @@
 import type { Project, ProjectRevision, Site } from "@websimai/shared-types";
-import { get } from "~/api";
-import type { OffsetMeta, WithIncluded } from "~/types/utils";
+
+import { get } from "#api";
+import type { OffsetMeta, WithIncluded } from "#types/utils";
 
 export type FeedTrendingProject = {
   readonly site: Site;

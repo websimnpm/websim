@@ -1,6 +1,7 @@
 import type { WebsimComment } from "@websimai/shared-types";
-import { get } from "~/api";
-import type { ProjectInfo } from "~/types/projects";
+
+import { get } from "#api";
+import type { ProjectInfo } from "#types/projects";
 
 type FeedPostsDataComment = WebsimComment & {
   readonly author_id: string;

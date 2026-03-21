@@ -1,4 +1,4 @@
-export type Prettify<T> = T extends infer O ? { [K in keyof O]: O[K] } : never;
+import type { Prettify } from "@websimai/shared-types";
 
 export type WithIncluded<T> = Prettify<T & { readonly included: readonly [] }>;
 

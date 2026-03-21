@@ -1,6 +1,7 @@
 import type { WebsimComment } from "@websimai/shared-types";
-import { get } from "~/api";
-import type { DataWithMeta } from "~/types/utils";
+
+import { get } from "#api";
+import type { DataWithMeta } from "#types/utils";
 
 export type ProjectsCommentData = {
   readonly comment: WebsimComment;

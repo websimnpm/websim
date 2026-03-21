@@ -1,4 +1,4 @@
-import { get } from "~/api";
+import { get } from "#api";
 
 type DailyStat = {
   readonly day: string;
