@@ -10,8 +10,8 @@
   },
   "type": "module",
   "scripts": {
-    "lint": "BUN_BE_BUN=1 oxlint",
-    "format": "BUN_BE_BUN=1 oxfmt",
+    "lint": "oxlint",
+    "format": "oxfmt",
     "test": "bun test",
     "build": "bun run --parallel --filter='./packages/**' build"
   },
