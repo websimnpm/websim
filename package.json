@@ -5,20 +5,21 @@
       "packages/*"
     ],
     "catalog": {
-      "tsdown": "^0.21.4"
+      "tsdown": "^0.21.7"
     }
   },
   "type": "module",
   "scripts": {
-    "lint": "oxlint",
-    "format": "oxfmt",
+    "lint": "BUN_BE_BUN=1 oxlint",
+    "format": "BUN_BE_BUN=1 oxfmt",
     "test": "bun test",
-    "build": "bun run --filter='./packages/**' build"
+    "build": "bun run --parallel --filter='./packages/**' build"
   },
   "devDependencies": {
-    "@gameroman/config": "^0.0.2",
-    "oxfmt": "^0.41.0",
-    "oxlint": "^1.56.0",
-    "typescript": "^5.9.3"
+    "@gameroman/config": "^0.0.5",
+    "oxfmt": "^0.42.0",
+    "oxlint": "^1.57.0",
+    "oxlint-tsgolint": "^0.18.1",
+    "typescript": "^6.0.2"
   }
 }
