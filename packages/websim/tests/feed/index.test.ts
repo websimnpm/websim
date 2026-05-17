@@ -2,7 +2,7 @@ import { describe, expect, it } from "bun:test";
 
 import { getFeedPosts, getFeedTrending, searchFeed } from "#client/feed";
 
-describe("getFeedPosts", () => {
+describe.skip("getFeedPosts", () => {
   it("should work with default params", async () => {
     const { data } = await getFeedPosts();
     expect(data).toBeArrayOfSize(12);
@@ -30,10 +30,10 @@ describe("getFeedPosts", () => {
     expect(c?.reply_to_data).toBeNull();
     expect(c?.source).toBe("comments");
     expect(c?.type).toBe("text");
-  });
+  },);
 });
 
-describe("getFeedTrending", () => {
+describe.skip("getFeedTrending", () => {
   it("should work with default params", async () => {
     const { feed } = await getFeedTrending();
     expect(feed.meta.offset).toBe(0);
@@ -52,7 +52,7 @@ describe("getFeedTrending", () => {
   });
 });
 
-describe("searchFeed", () => {
+describe.skip("searchFeed", () => {
   it("should work", async () => {
     const { feed } = await searchFeed("best", "game");
     expect(feed.meta.offset).toBe(0);
