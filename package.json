@@ -24,6 +24,6 @@
     "typescript": "6.0.3"
   },
   "overrides": {
-    "@babel/parser": "8.0.0-rc.5"
+    "@babel/parser": "8.0.0-rc.6"
   }
 }
