@@ -5,7 +5,7 @@
       "packages/*"
     ],
     "catalog": {
-      "tsdown": "0.22.0"
+      "tsdown": "0.22.1"
     }
   },
   "type": "module",
@@ -24,6 +24,8 @@
     "typescript": "6.0.3"
   },
   "overrides": {
-    "@babel/parser": "8.0.0-rc.5"
+    "@babel/parser": "8.0.0-rc.6",
+    "@babel/types": "8.0.0-rc.6",
+    "rolldown-plugin-dts": "0.25.2"
   }
 }
