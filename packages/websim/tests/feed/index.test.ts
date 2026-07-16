@@ -30,7 +30,7 @@ describe.skip("getFeedPosts", () => {
     expect(c?.reply_to_data).toBeNull();
     expect(c?.source).toBe("comments");
     expect(c?.type).toBe("text");
-  },);
+  });
 });
 
 describe.skip("getFeedTrending", () => {
