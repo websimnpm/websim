@@ -28,6 +28,6 @@
     "prepublishOnly": "bun run build"
   },
   "devDependencies": {
-    "tsdown": "0.23.1"
+    "tsdown": "0.23.2"
   }
 }
